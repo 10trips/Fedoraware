@@ -17,6 +17,7 @@
 
 
 ## Notes
+- ADDED DT TICKS 12/6
 - This cheat is very poop and paste... don't use...
 - wbath
 - It is recommended to use dxlevel 90+ due to issues with imgui.
@@ -65,3 +66,4 @@
   - [HutchyBean](https://github.com/HutchyBean)
   - [SinnerK0N](https://github.com/SinnerK0N)
   - [John Page The Fourth](https://github.com/relaxtakenotes)
+  - [10trips](https://github.com/10trips)
