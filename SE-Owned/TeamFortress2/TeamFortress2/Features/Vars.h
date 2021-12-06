@@ -462,6 +462,7 @@ namespace Vars
 		namespace CL_Move
 		{
 			inline CVar<bool> Enabled       { true, L"Enabled" };
+			inline CVar<int> Ticks          { 15, L"DT Ticks" };//fard
 			inline CVar<bool> Doubletap		{ true, L"Doubletap" };
 			inline CVar<bool> NotInAir		{ true, L"Dont DT in air" };
 			inline CVar<int> TeleportKey	{ 0x52, L"Teleport Key" }; //R
