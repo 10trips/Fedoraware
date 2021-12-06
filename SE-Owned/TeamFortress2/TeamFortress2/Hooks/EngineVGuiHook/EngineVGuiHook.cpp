@@ -1,6 +1,7 @@
 #include "EngineVGuiHook.h"
 
 #include "../../SDK/Includes/icons.h"
+#include "../../Features/Vars.h"
 #include "../../Features/Menu/Menu.h"
 #include "../../Features/SpectatorList/SpectatorList.h"
 #include "../../Features/SpyWarning/SpyWarning.h"
@@ -109,7 +110,7 @@ void __stdcall EngineVGuiHook::Paint::Hook(int mode)
 							}
 
 							static int tickWidth = Vars::Misc::CL_Move::DtbarOutlineWidth.m_Var;
-							int barWidth = (tickWidth * g_GlobalInfo.dtTicks) + 2;
+							int barWidth = (tickWidth * Vars::Misc::CL_Move::Ticks.m_Var) + 2;
 							if (Vars::Misc::CL_Move::DTBarStyle.m_Var == 1) {
 								g_Draw.OutlinedRect(
 									g_ScreenSize.c - (barWidth / 2),
