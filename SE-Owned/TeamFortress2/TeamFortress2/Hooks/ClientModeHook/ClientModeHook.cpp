@@ -125,10 +125,10 @@ bool __stdcall ClientModeHook::CreateMove::Hook(float input_sample_frametime, CU
 
 		int classNum = pLocal->GetClassNum();
 		if (classNum == ETFClass::CLASS_HEAVY) {
-			g_GlobalInfo.dtTicks = MAX_NEW_COMMANDS_HEAVY;
+			g_GlobalInfo.dtTicks = MAX_NEW_COMMANDS_HEAVY; //no use
 		}
 		else {
-			g_GlobalInfo.dtTicks = MAX_NEW_COMMANDS;
+			g_GlobalInfo.dtTicks = MAX_NEW_COMMANDS; //no use
 		}
 		nOldFlags = pLocal->GetFlags();
 
@@ -285,8 +285,8 @@ bool __stdcall ClientModeHook::CreateMove::Hook(float input_sample_frametime, CU
 	auto AntiWarp = [](CUserCmd* cmd) -> void
 	{
 		if (g_GlobalInfo.m_bShouldShift && g_GlobalInfo.m_nShifted) {
-			cmd->sidemove = -(cmd->sidemove) * (g_GlobalInfo.m_nShifted / g_GlobalInfo.dtTicks);
-			cmd->forwardmove = -(cmd->forwardmove) * (g_GlobalInfo.m_nShifted / g_GlobalInfo.dtTicks);
+			cmd->sidemove = -(cmd->sidemove) * (g_GlobalInfo.m_nShifted / Vars::Misc::CL_Move::Ticks.m_Var);
+			cmd->forwardmove = -(cmd->forwardmove) * (g_GlobalInfo.m_nShifted / Vars::Misc::CL_Move::Ticks.m_Var);
 		}
 		else {
 			return;
